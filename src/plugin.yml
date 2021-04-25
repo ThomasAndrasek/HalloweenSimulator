@@ -1,0 +1,11 @@
+name: HalloweenSimulator
+main: com.thomasandrasek.hallosim.Main
+version: 1.0
+author: Thomas Andrasek
+description: Happy Halloween!
+commands:
+    hello:
+        description: Test hello command.
+        usage: /hello
+        permission: HalloweenSimulator.hello
+        permission-message: You don't have <permission>
