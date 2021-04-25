@@ -77,4 +77,14 @@ public class MapWand
 		
 		return true;
 	}
+	
+	public static MapWand getWandFromName(String player)
+	{
+		if (wands.get(player) != null)
+		{
+			return wands.get(player);
+		}
+		
+		return null;
+	}
 }

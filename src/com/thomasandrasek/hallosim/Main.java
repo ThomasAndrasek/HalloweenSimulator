@@ -1,5 +1,6 @@
 package com.thomasandrasek.hallosim;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin 
@@ -9,6 +10,8 @@ public class Main extends JavaPlugin
 	{
 		this.getCommand("hello").setExecutor(new CommandManager(this));
 		this.getCommand("hs-wand").setExecutor(new CommandManager(this));
+		
+		Bukkit.getPluginManager().registerEvents(new EventManager(this), this);
 	}
 	
 	@Override

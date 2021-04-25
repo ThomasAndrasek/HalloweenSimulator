@@ -3,6 +3,7 @@ main: com.thomasandrasek.hallosim.Main
 version: 1.0
 author: Thomas Andrasek
 description: Happy Halloween!
+api-version: 1.16
 commands:
     hello:
         description: Test hello command.
