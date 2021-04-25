@@ -18,6 +18,7 @@ public class Main extends JavaPlugin
         saveConfig();
         
         CandyManager.loadSpawnBlocks(this);
+        CandyManager.loadSpawnLocations(this);
 	}
 	
 	@Override

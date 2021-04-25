@@ -47,6 +47,8 @@ public class MapManager
 		config.set("Map.max-location", maxLocation);
 		plugin.saveConfig();
 		
+		CandyManager.loadSpawnLocations(plugin);
+		
 		return true;
 	}
 }
