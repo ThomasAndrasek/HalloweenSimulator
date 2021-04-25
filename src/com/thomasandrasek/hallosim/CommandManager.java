@@ -26,6 +26,22 @@ public class CommandManager implements CommandExecutor
 			
 			return true;
 		}
+		else if (label.equalsIgnoreCase("hs-wand"))
+		{
+			Player player = (Player) sender;
+			
+			if (MapWand.giveWand(player.getDisplayName()))
+			{
+				player.sendMessage("Added wand to inventory.");
+			}
+			else
+			{
+				player.sendMessage("Could not add wand to inventory, inventory full.");
+			}
+			
+			return true;
+		}
+		
 		return false;
 	}
 }

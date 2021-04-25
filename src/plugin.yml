@@ -9,3 +9,8 @@ commands:
         usage: /hello
         permission: HalloweenSimulator.hello
         permission-message: You don't have <permission>
+    hs-wand:
+        description: Gives player map wand.
+        usage: /hs-wand
+        permission: HalloweenSimulator.hs-wand
+        permission-message: You don't have <permission>

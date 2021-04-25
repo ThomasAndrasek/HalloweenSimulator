@@ -8,6 +8,7 @@ public class Main extends JavaPlugin
 	public void onEnable()
 	{
 		this.getCommand("hello").setExecutor(new CommandManager(this));
+		this.getCommand("hs-wand").setExecutor(new CommandManager(this));
 	}
 	
 	@Override
