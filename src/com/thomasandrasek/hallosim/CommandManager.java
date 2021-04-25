@@ -41,6 +41,21 @@ public class CommandManager implements CommandExecutor
 			
 			return true;
 		}
+		else if (label.equalsIgnoreCase("hs-set-map"))
+		{
+			Player player = (Player) sender;
+			
+			if (MapManager.setMinMaxLocation(player, plugin))
+			{
+				player.sendMessage("Positions have been set.");
+			}
+			else
+			{
+				player.sendMessage("Positions could not be set, please select two locations using the map wand.");
+			}
+			
+			return true;
+		}
 		
 		return false;
 	}

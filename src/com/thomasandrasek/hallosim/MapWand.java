@@ -35,6 +35,11 @@ public class MapWand
 	
 	public Location getLocation1()
 	{
+		if (this.location1 == null)
+		{
+			return null;
+		}
+		
 		Location ret = new Location(location1.getWorld(), location1.getX(), location1.getY(), location1.getZ());
 		
 		return ret;
@@ -42,6 +47,11 @@ public class MapWand
 	
 	public Location getLocation2()
 	{
+		if (this.location2 == null)
+		{
+			return null;
+		}
+		
 		Location ret = new Location(location2.getWorld(), location2.getX(), location2.getY(), location2.getZ());
 		
 		return ret;

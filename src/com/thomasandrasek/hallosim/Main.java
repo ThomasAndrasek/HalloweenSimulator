@@ -10,8 +10,12 @@ public class Main extends JavaPlugin
 	{
 		this.getCommand("hello").setExecutor(new CommandManager(this));
 		this.getCommand("hs-wand").setExecutor(new CommandManager(this));
+		this.getCommand("hs-set-map").setExecutor(new CommandManager(this));
 		
 		Bukkit.getPluginManager().registerEvents(new EventManager(this), this);
+		
+		this.getConfig().options().copyDefaults(true);
+        saveConfig();
 	}
 	
 	@Override

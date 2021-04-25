@@ -15,3 +15,8 @@ commands:
         usage: /hs-wand
         permission: HalloweenSimulator.hs-wand
         permission-message: You don't have <permission>
+    hs-set-map:
+        description: Sets the minimum and maximum location of the map.
+        usage: /hs-set-map
+        permission: HalloweenSimulator.hs-set-map
+        permission-message: You don't have <permission>
