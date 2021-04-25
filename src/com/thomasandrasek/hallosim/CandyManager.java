@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -15,8 +16,11 @@ public class CandyManager
 	
 	private static ArrayList<Location> spawnLocations = new ArrayList<>();
 	
+	private static int candyCount = 0;
+	
 	public static void loadSpawnBlocks(Main plugin)
 	{
+		plugin.getLogger().info("Loading spawn blocks.");
 		FileConfiguration config = plugin.getConfig();
 		
 		List<String> blockNames = config.getStringList("Map.blocks");
@@ -33,10 +37,13 @@ public class CandyManager
 				plugin.getLogger().info(name + " is not a valid block!");
 			}
 		}
+		
+		plugin.getLogger().info("Finished loading spawn blocks.");
 	}
 	
 	public static void loadSpawnLocations(Main plugin)
 	{
+		plugin.getLogger().info("Loading candy spawn positions");
 		spawnLocations.clear();
 		
 		FileConfiguration config = plugin.getConfig();
@@ -62,9 +69,38 @@ public class CandyManager
 					if (spawnBlocks.get(block.getBlock().getType().name()) != null && blockAbove.getBlock().getType().equals(Material.AIR))
 					{
 						spawnLocations.add(block);
-						plugin.getLogger().info("Added location: " + block.toString());
 					}
 				}
+			}
+		}
+		plugin.getLogger().info("Finished loading candy spawn positions.");
+	}
+	
+	public static void loadCandyBasketAmount(Main plugin)
+	{
+		candyCount = plugin.getConfig().getInt("Map.candy-basket-amount");
+		plugin.getLogger().info("Loaded candy basket count.");
+	}
+	
+	public static void spawnCandyBaskets()
+	{
+		int count = 0;
+		
+		Random random = new Random();
+		
+		while (count < candyCount)
+		{
+			int choice = random.nextInt(spawnLocations.size());
+			
+			Location spawnLocation = spawnLocations.get(choice);
+			
+			Location blockAbove = new Location(spawnLocation.getWorld(), spawnLocation.getX(), spawnLocation.getY() + 1, spawnLocation.getZ());
+			
+			if (blockAbove.getBlock().getType().equals(Material.AIR))
+			{
+				blockAbove.getBlock().setType(Material.IRON_BLOCK);
+				
+				count++;
 			}
 		}
 	}

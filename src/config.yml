@@ -3,3 +3,4 @@ Map:
     max-location:
     blocks:
        - oak_planks
+    candy-basket-amount: 4

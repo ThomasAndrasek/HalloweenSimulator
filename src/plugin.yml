@@ -20,3 +20,8 @@ commands:
         usage: /hs-set-map
         permission: HalloweenSimulator.hs-set-map
         permission-message: You don't have <permission>
+    hs-spawn-baskets:
+        description: Spawn the candy baskets.
+        usage: /hs-spawn-baskets
+        permission: HalloweenSimulator.hs-spawn-baskets
+        permission-message: You don't have <permission>

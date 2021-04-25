@@ -57,6 +57,17 @@ public class CommandManager implements CommandExecutor
 			return true;
 		}
 		
+		else if (label.equalsIgnoreCase("hs-spawn-baskets"))
+		{
+			Player player = (Player) sender;
+			
+			CandyManager.spawnCandyBaskets();
+			
+			player.sendMessage("Baskets have been spawned.");
+			
+			return true;
+		}
+		
 		return false;
 	}
 }
