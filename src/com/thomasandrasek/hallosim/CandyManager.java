@@ -100,6 +100,8 @@ public class CandyManager
 			{
 				blockAbove.getBlock().setType(Material.IRON_BLOCK);
 				
+				new CandyBasket(blockAbove);
+				
 				count++;
 			}
 		}

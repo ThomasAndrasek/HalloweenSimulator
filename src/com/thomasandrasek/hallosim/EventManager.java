@@ -60,6 +60,16 @@ public class EventManager implements Listener
 				
 				event.setCancelled(true);
 			}
+			else if (itemInHand.getAmount() == 0 && event.getClickedBlock().getType().equals(Material.IRON_BLOCK))
+			{
+				CandyBasket basket = CandyBasket.getActiveBasketFromLocation(event.getClickedBlock().getLocation());
+				
+				if (basket != null)
+				{
+					basket.setInactive(event.getPlayer());
+					event.getPlayer().sendMessage("Collected basket!");
+				}
+			}
 		}
 	}
 }

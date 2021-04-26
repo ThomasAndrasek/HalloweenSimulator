@@ -6,6 +6,16 @@ import org.bukkit.entity.Player;
 
 public class MapManager 
 {
+	public static void runGame()
+	{
+		
+	}
+	
+	public static void startGame()
+	{
+		CandyManager.spawnCandyBaskets();
+	}
+	
 	public static boolean setMinMaxLocation(Player player, Main plugin)
 	{
 		MapWand wand = MapWand.getWandFromName(player.getDisplayName());
