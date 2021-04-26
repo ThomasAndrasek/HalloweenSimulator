@@ -106,4 +106,10 @@ public class CandyManager
 			}
 		}
 	}
+	
+	public static void clearBaskets()
+	{
+		CandyBasket.clearActiveBaskets();
+		CandyBasket.clearInactiveBaskets();
+	}
 }

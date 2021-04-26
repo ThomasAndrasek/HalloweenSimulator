@@ -67,6 +67,16 @@ public class CommandManager implements CommandExecutor
 			
 			return true;
 		}
+		else if (label.equalsIgnoreCase("hs-clear-baskets"))
+		{
+			Player player = (Player) sender;
+			
+			CandyManager.clearBaskets();
+			
+			player.sendMessage("Baskets have been cleared.");
+			
+			return true;
+		}
 		
 		return false;
 	}

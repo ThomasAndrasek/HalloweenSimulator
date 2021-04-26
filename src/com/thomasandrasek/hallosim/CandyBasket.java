@@ -3,12 +3,13 @@ package com.thomasandrasek.hallosim;
 import java.util.ArrayList;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
 public class CandyBasket 
 {
 	private static ArrayList<CandyBasket> activeBaskets = new ArrayList<>();
-	private static ArrayList<CandyBasket> nonActiveBaskets = new ArrayList<>();
+	private static ArrayList<CandyBasket> inactiveBaskets = new ArrayList<>();
 	
 	private boolean active;
 	private Player whoClicked;
@@ -50,7 +51,7 @@ public class CandyBasket
 		this.whoClicked = player;
 		
 		activeBaskets.remove(this);
-		nonActiveBaskets.add(this);
+		inactiveBaskets.add(this);
 	}
 	
 	public static CandyBasket getActiveBasketFromLocation(Location location)
@@ -64,5 +65,25 @@ public class CandyBasket
 		}
 		
 		return null;
+	}
+	
+	public static void clearActiveBaskets()
+	{
+		for (CandyBasket basket : activeBaskets)
+		{
+			basket.location.getBlock().setType(Material.AIR);
+		}
+		
+		activeBaskets.clear();
+	}
+	
+	public static void clearInactiveBaskets()
+	{
+		for (CandyBasket basket : inactiveBaskets)
+		{
+			basket.location.getBlock().setType(Material.AIR);
+		}
+		
+		inactiveBaskets.clear();
 	}
 }

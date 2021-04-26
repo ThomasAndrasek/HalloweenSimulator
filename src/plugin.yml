@@ -25,3 +25,8 @@ commands:
         usage: /hs-spawn-baskets
         permission: HalloweenSimulator.hs-spawn-baskets
         permission-message: You don't have <permission>
+    hs-clear-baskets:
+        description: Clear the candy baskets.
+        usage: /hs-clear-baskets
+        permission: HalloweenSimulator.hs-clear-baskets
+        permission-message: You don't have <permission>

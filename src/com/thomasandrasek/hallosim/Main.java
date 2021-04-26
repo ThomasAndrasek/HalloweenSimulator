@@ -12,6 +12,7 @@ public class Main extends JavaPlugin
 		this.getCommand("hs-wand").setExecutor(new CommandManager(this));
 		this.getCommand("hs-set-map").setExecutor(new CommandManager(this));
 		this.getCommand("hs-spawn-baskets").setExecutor(new CommandManager(this));
+		this.getCommand("hs-clear-baskets").setExecutor(new CommandManager(this));
 		
 		Bukkit.getPluginManager().registerEvents(new EventManager(this), this);
 		
