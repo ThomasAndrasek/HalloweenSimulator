@@ -1,5 +1,6 @@
 package com.thomasandrasek.hallosim;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -11,9 +12,22 @@ public class MapManager
 		
 	}
 	
+	public static void initializeTrickOrTreaters()
+	{
+		Player[] players = (Player[]) Bukkit.getOnlinePlayers().toArray();
+		
+		for (Player player : players)
+		{
+			new TrickOrTreater(player.getDisplayName());
+		}
+	}
+	
 	public static void startGame()
 	{
+		CandyManager.clearBaskets();
 		CandyManager.spawnCandyBaskets();
+		initializeTrickOrTreaters();
+		runGame();
 	}
 	
 	public static boolean setMinMaxLocation(Player player, Main plugin)

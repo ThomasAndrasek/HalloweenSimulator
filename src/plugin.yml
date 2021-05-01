@@ -30,3 +30,8 @@ commands:
         usage: /hs-clear-baskets
         permission: HalloweenSimulator.hs-clear-baskets
         permission-message: You don't have <permission>
+    hs-get-head:
+        description: Get targeted head data..
+        usage: /hs-get-head
+        permission: HalloweenSimulator.hs-get-head
+        permission-message: You don't have <permission>

@@ -1,9 +1,19 @@
 package com.thomasandrasek.hallosim;
 
+import java.util.UUID;
+
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.SkullMeta;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import com.mojang.authlib.GameProfile;
+import com.mojang.authlib.properties.Property;
 
 public class CommandManager implements CommandExecutor
 {

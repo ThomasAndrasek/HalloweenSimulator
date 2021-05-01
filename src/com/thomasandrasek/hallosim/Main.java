@@ -13,6 +13,7 @@ public class Main extends JavaPlugin
 		this.getCommand("hs-set-map").setExecutor(new CommandManager(this));
 		this.getCommand("hs-spawn-baskets").setExecutor(new CommandManager(this));
 		this.getCommand("hs-clear-baskets").setExecutor(new CommandManager(this));
+		this.getCommand("hs-get-head").setExecutor(new CommandManager(this));
 		
 		Bukkit.getPluginManager().registerEvents(new EventManager(this), this);
 		
@@ -22,6 +23,7 @@ public class Main extends JavaPlugin
         CandyManager.loadSpawnBlocks(this);
         CandyManager.loadSpawnLocations(this);
         CandyManager.loadCandyBasketAmount(this);
+        CandyManager.loadCandyBasketBlocks(this);
 	}
 	
 	@Override
